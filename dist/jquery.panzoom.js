@@ -1205,10 +1205,10 @@
 
 						// Calculate move on middle point
 						var middle = self._getMiddle(touches);
-						var diff = self._getDistance(touches) - startDistance;
+						var diff = (self._getDistance(touches) - startDistance) / startDistance;
 
 						// Set zoom
-						self.zoom(diff * (options.increment / 100) + startScale, {
+						self.zoom(diff * startScale + startScale, {
 							focal: middle,
 							matrix: matrix,
 							animate: 'skip'
